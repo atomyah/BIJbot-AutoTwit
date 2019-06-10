@@ -1,0 +1,17 @@
+{
+  "name": "bijbot_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "aws lambda update-function-code --function-name arn:aws:lambda:ap-northeast-1:567403292509:function:BIJbot-AutoTweet --region ap-northeast-1 --zip-file fileb://Lambda-Deployment.zip",
+    "predeploy": "zip -r Lambda-Deployment.zip * -x *.zip *.json *.log",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Atom Yah",
+  "license": "ISC",
+  "dependencies": {
+    "twitter": "^1.7.1",
+    "util": "^0.12.0"
+  }
+}
